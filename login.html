@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ورود به MercaVault</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="login-container">
+    <h2>ورود به MercaVault</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="نام کاربری" required>
+      <input type="password" id="password" placeholder="کلمه عبور" required>
+      <button type="button" onclick="togglePass()">نمایش کلمه عبور</button>
+      <button type="submit">ورود</button>
+    </form>
+  </div>
+  <script>
+    function togglePass() {
+      const pass = document.getElementById('password');
+      pass.type = pass.type === 'password' ? 'text' : 'password';
+    }
+    document.getElementById('loginForm').addEventListener('submit', e => {
+      e.preventDefault();
+      if (document.getElementById('password').value.length < 6) {
+        alert('کلمه عبور حداقل ۶ کاراکتر باشه!');
+        return;
+      }
+      alert('ورود با موفقیت! 🎉 (در نسخه واقعی با Backend چک می‌شه)');
+    });
+  </script>
+</body>
+</html>

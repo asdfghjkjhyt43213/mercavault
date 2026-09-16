@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پنل مدیریت MercaVault</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="admin-panel">
+    <h2>پنل مدیریت MercaVault</h2>
+    <input type="password" id="adminPass" placeholder="رمز ادمین (admin123)" value="admin123">
+    <button onclick="loginAdmin()">ورود به پنل مدیریت</button>
+    <div id="adminContent" style="display:none; margin-top:20px;">
+      <h3>مدیریت کاربران و چت روم‌ها</h3>
+      <p>در نسخه واقعی این بخش با Backend کامل می‌شه (لیست کاربران، حذف پیام، آمار و ...)</p>
+    </div>
+  </div>
+  <script>
+    function loginAdmin() {
+      const pass = document.getElementById('adminPass').value;
+      if (pass === 'admin123') {
+        document.getElementById('adminContent').style.display = 'block';
+        alert('به پنل مدیریت خوش آمدید! 🎉');
+      } else {
+        alert('رمز اشتباه است!');
+      }
+    }
+  </script>
+</body>
+</html>
